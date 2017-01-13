@@ -1,0 +1,7 @@
+- name: stop httpd
+  hosts: all
+ 
+  tasks:
+ 
+  # Example action to stop service httpd, if running
+  - service: name=httpd state=stopped
