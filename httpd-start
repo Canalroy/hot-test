@@ -1,0 +1,6 @@
+- name: start httpd
+hosts: all
+ 
+tasks:
+# Example action to start service httpd, if not running
+ - service: name=httpd state=started
