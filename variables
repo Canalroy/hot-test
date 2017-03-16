@@ -1,0 +1,6 @@
+# WindowsをAnsible Towerから操作する場合には
+# 以下をinventoriesのGroup or hosts のvariablesへ追加。
+---
+ansible_port: 5986
+ansible_connection: winrm
+ansible_winrm_server_cert_validation: ignore
