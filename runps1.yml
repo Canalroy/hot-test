@@ -1,4 +1,4 @@
-- name: Run powershell script
+- name: Run OS Infromation get PS script
   hosts: all 
   gather_facts: false
   tasks:
