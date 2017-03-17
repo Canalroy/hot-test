@@ -1,7 +1,6 @@
-- name: stop httpd
-  hosts: all
- 
-  tasks:
- 
-  # Example action to stop service httpd, if running
-  - service: name=httpd state=stopped
+---
+- name: confirm OS information
+
+tasks:
+- name: Vendor Name
+    - command: wmic csproduct get vendor
