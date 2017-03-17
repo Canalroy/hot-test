@@ -1,6 +1,5 @@
----
 - name: confirm OS information
 
-tasks:
+  tasks:
 - name: Vendor Name
   command: wmic csproduct get vendor
