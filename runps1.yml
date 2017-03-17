@@ -2,5 +2,5 @@
   hosts: all 
   gather_facts: false
   tasks:
-    - name: Run powershell script
+    - name: Run OS Information Get PS script
       script: /var/lib/awx/projects/_21__test_yaml/get-information.ps1
