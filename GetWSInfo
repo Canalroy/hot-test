@@ -3,5 +3,4 @@
 
 tasks:
   - name: ベンダー名
-    - wmic csproduct get vendor
-  - name: 
+    - command: wmic csproduct get vendor
