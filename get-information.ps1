@@ -1,26 +1,26 @@
-'#######Windows î•ñæ“¾######'
-'===ƒxƒ“ƒ_[–¼==='
+'#######Windows æƒ…å ±å–å¾—######'
+'===ãƒ™ãƒ³ãƒ€ãƒ¼å==='
 wmic csproduct get vendor
-'===ƒVƒŠƒAƒ‹ƒiƒ“ƒo[==='
+'===ã‚·ãƒªã‚¢ãƒ«ãƒŠãƒ³ãƒãƒ¼==='
 wmic bios get serialnumber
-'===ƒzƒXƒg–¼==='
+'===ãƒ›ã‚¹ãƒˆå==='
 hostname
 '===IP==='
 ipconfig /all
-'===CPUŒ^”Ô / CPU” / ƒRƒA” / CPU==='
+'===CPUå‹ç•ª / CPUæ•° / ã‚³ã‚¢æ•° / CPU==='
 Get-WmiObject -Class Win32_Processor | FL Name, NumberOfCores, NumberOfLogicalProcessors, MaxClockSpeed
-'===ƒƒ‚ƒŠ—Ê==='
+'===ãƒ¡ãƒ¢ãƒªé‡==='
 ((Get-WmiObject -Class Win32_physicalMemory).capacity /1024/1024/1024).toString() + " GB"
-'===HD—e—Ê==='
+'===HDå®¹é‡==='
 Get-WmiObject Win32_LogicalDisk | format-list DeviceID, Name, VolumeName, DeviceType, Filesystem, ProviderName, Size, FreeSpace
-'===ƒp[ƒeƒBƒVƒ‡ƒ“\¬==='
+'===ãƒ‘ãƒ¼ãƒ†ã‚£ã‚·ãƒ§ãƒ³æ§‹æˆ==='
 Get-WmiObject Win32_LogicalDisk | format-list DeviceID, Name, VolumeName, DeviceType, Filesystem, ProviderName, Size, FreeSpace
-'===RAID\¬==='
-'===OS–¼ / OS Version==='
+'===RAIDæ§‹æˆ==='
+'===OSå / OS Version==='
 Get-WmiObject -Class Win32_OperatingSystem | Format-List Caption, csdversion, OSArchitecture, BuildNumber, countrycode, Locale, MUILanguages, Organization
 
-'===“±“üSW==='
+'===å°å…¥SW==='
 get-windowsfeature
 get-wmiobject -class win32_product | format-list Name, Vendor, Version
-'===•Ûç–—¹Šú==='
+'===ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æƒ…å ±==='
 cscript.exe C:\windows\System32\slmgr.vbs /dlv
