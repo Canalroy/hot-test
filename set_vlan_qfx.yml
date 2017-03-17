@@ -1,0 +1,26 @@
+- name: Set VLAN ID for QFX XE-0/0/0   
+  hosts: QFX
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  
+  tasks:
+    - name: Set Hostname
+      junos_config:
+        lines:
+        - set system host-name qfx5100
+        replace: True
+        host: "{{ inventory_hostname }}"
+    - name: Set XE-0/0/0
+      junos_config:
+        lines:
+        - set system host-name qfx5100
+        - set interfaces xe-0/0/0 flexible-vlan-tagging
+        - set interfaces xe-0/0/0 ether-options auto-negotiation
+        - set interfaces xe-0/0/0 unit 0 vlan-id "{{ vlan_id }}"
+        - set interfaces xe-0/0/0 unit 0 family inet address 1.0.0.2/30
+        - set interfaces xe-0/0/1 ether-options auto-negotiation
+        - set interfaces xe-0/0/1 unit 0 family inet address 2.0.0.2/30
+        replace: True
+        host: "{{ inventory_hostname }}"
