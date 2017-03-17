@@ -1,6 +1,5 @@
-- name: 各種確認
-  connnection: local
+- name: confirm OS information
 
 tasks:
-  - name: ベンダー名
+  - name: Vendor Name
     - command: wmic csproduct get vendor
