@@ -1,0 +1,7 @@
+- name: confirm RHEL Information
+
+  tasks:
+- name: Vendor Name
+  command: dmidecode -s system-product-name
+- name: Serial Number
+  command: dmidecode -s system-serial-number
