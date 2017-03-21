@@ -11,4 +11,4 @@
   - name: IPアドレス
     win_command: ipconfig /all
   -name: CPU型番/CPU数
-    win_shell: Get-WmiObject -Class Win32_Processor | FL Name, NumberOfCores, NumberOfLogicalProcessors, MaxClockSpeed
+    win_shell: Get-WmiObject -Class Win32_Processor 
