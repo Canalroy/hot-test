@@ -3,4 +3,4 @@
 
   tasks:
 - name: Vendor Name
-  command: wmic csproduct get vendor
+  win_shell: wmic csproduct get vendor
