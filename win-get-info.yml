@@ -1,4 +1,5 @@
 - name: confirm OS information
+  hosts: all
 
   tasks:
 - name: Vendor Name
