@@ -2,5 +2,5 @@
   hosts: all
 
   tasks:
-- name: Vendor Name
-  win_command: wmic csproduct get vendor
+  - name: Vendor Name
+    win_command: wmic csproduct get vendor
