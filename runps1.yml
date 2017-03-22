@@ -2,7 +2,7 @@
   hosts: all 
   gather_facts: false
   vars:
-  csvpath: C:\Windows\Temp\installed_{{ inventory_hostname }}.csv
+  csvpath: C:\Windows\Temp\windows_info.csv
   tasks:
     - name: Run OS Information Get PS script
       script: /var/lib/awx/projects/_21__test_yaml/get-information.ps1  "{{ csvpath }}"
