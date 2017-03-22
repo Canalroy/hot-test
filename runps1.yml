@@ -1,8 +1,10 @@
 - name: Run OS Infromation get PS script
   hosts: all 
   gather_facts: false
+  vars:
+  csvpath: C:\Windows\Temp\installed_{{ inventory_hostname }}.csv
   tasks:
     - name: Run OS Information Get PS script
-      script: /var/lib/awx/projects/_21__test_yaml/get-information.ps1
-      register: confirm_win_info
-    - debug: var=confirm_win_info.stdout_lines
+      script: /var/lib/awx/projects/_21__test_yaml/get-information.ps1  "{{ csvpath }}"
+    - name: 生成したcsvファイルを取得
+      fetch: src={{ csvpath }} dest=./outdir/ flat=yes
