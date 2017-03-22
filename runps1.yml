@@ -4,3 +4,5 @@
   tasks:
     - name: Run OS Information Get PS script
       script: /var/lib/awx/projects/_21__test_yaml/get-information.ps1
+      register: confirm_win_info
+    - debug: var=confirm_win_info.stdout_lines
