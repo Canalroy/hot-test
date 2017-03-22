@@ -10,4 +10,6 @@
     win_command: hostname
   - name: IPアドレス
     win_command: ipconfig /all
-    
+  - name: 導入SW
+    win_command: get-windowsfeature
+    win_command: get-wmiobject -class win32_product
