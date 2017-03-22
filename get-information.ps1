@@ -1,8 +1,9 @@
 '#######Windows Server Informations######'
+Param($csvpath)
 '===Vendor Name==='
-wmic csproduct get vendor
+wmic csproduct get vendor | export-csv $csvpath -notype
 '===Serial Number==='
-wmic bios get serialnumber
+wmic bios get serialnumber | export-csv $csvpath -notype
 '===Hostname==='
 hostname
 '===IP address==='
