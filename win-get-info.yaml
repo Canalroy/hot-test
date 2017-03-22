@@ -5,7 +5,7 @@
   - name: ベンダー名
     win_command: wmic csproduct get vendor
     register: vendorname_result
-    - debug: var=vendorname_result.stdout_lines
+    - debug: var=vendorname_result
   - name: シリアルNo
     win_command: wmic bios get serialnumber
   - name: ホスト名
